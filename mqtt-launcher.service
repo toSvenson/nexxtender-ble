@@ -1,0 +1,13 @@
+[Unit]
+Description=A script listening on MQTT to launch shell commands
+After=syslog.target network.target
+
+[Service]
+WorkingDirectory=/opt/nexxtender
+ExecStart=/usr/bin/python3 mqtt-launcher.py
+
+Restart=always
+RestartSec=120
+
+[Install]
+WantedBy=multi-user.target
